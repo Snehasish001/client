@@ -1,0 +1,293 @@
+.about-container {
+  max-width: 1000px; /* Reduced from 1200px */
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.team-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.team-member {
+  display: flex; /* This is the line you highlighted */
+  align-items: center;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  
+  /* Option 1: Solid Grey Background */
+  /* background-color: #CCCCCC; / / A medium solid grey. Examples: #E0E0E0 (light), #A9A9A9 (darker) */
+
+  /* Option 2: Semi-Transparent Grey Background (Recommended to still see the waving gradient) */
+  background-color: rgba(128, 128, 128, 0.5); /* Grey (128,128,128) with 50% opacity (0.5) */
+  /* Adjust the RGB values for different shades of grey, and the alpha (last value) for opacity */
+  /* For example, a lighter semi-transparent grey: rgba(200, 200, 200, 0.4); */
+
+  border-radius: 8px; /* Keep or remove if you don't want rounded corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Keep or remove if you don't want a shadow */
+  min-height: 200px; 
+}
+
+.member-image {
+  position: absolute;
+  left: -60px; /* Adjusted to match increased padding-left on .team-member if needed, or keep as is */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.8); /* White border with slight transparency */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for better pop */
+}
+
+.member-info {
+  text-align: left; /* Ensures text within this block is left-aligned */
+  color: #FFFFFF;;
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.7), 
+    0 0 5px rgba(0, 0, 0, 0.5);
+  order: 1; /* Flexbox order: text comes first */
+  flex-grow: 1; /* Allows text block to take available space */
+  margin-right: 20px; /* Add some space between text and image */
+}
+
+.member-info h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  text-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 0.8), 
+    0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.member-info p {
+  margin-bottom: 0;
+  color: #EAEAEA;
+  font-size: 1em;
+  line-height: 1.6;
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.7), 
+    0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  background-color: #f8f8f836;
+  box-shadow: 0 6px 15px rgba(7, 7, 7, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.member-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(172, 164, 164, 0.1);
+}
+
+.member-info {
+  order: 2; /* Text below image in column layout */
+  text-align: center; /* Center text for stacked layout */
+  margin-right: 0; /* Remove margin for stacked layout */
+  margin-top: 15px; /* Add space above text when stacked */
+}
+
+.member-info h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.member-info h3 {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.member-info p {
+  font-size: 1rem;
+  text-align: center;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2rem 1rem;
+  }
+
+  .team-member {
+    /* grid-template-columns: 1fr; / / Replaced with flex properties */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .member-image {
+    position: static; /* Override absolute positioning */
+    transform: none; /* Reset transform */
+    left: auto;
+    top: auto;
+    margin-bottom: 1rem; /* Add some space below the image */
+    width: 150px; /* You might want to adjust this for smaller screens */
+    height: 150px;
+  }
+
+  .member-image img {
+    height: 100%; /* Make image fill the .member-image container */
+    width: 100%;
+    /* margin-bottom: 1rem; / / Moved to .member-image for better control */
+  }
+
+  .member-info {
+    padding: 0;
+    text-align: center;
+    margin-top: 1rem; /* Ensure space between image and info */
+  }
+
+  .member-info h2 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .member-info h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-section {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+  color:rgb(46, 46, 46);
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Project Information Styles */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-subsection {
+  margin-bottom: 1.5rem;
+}
+
+.project-subsection h3 {
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 0.5rem;
+}
+
+.team-list li {
+  margin-bottom: 1rem;
+}
+
+.project-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaeaea;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+  
+  .about-section {
+    padding: 1.5rem;
+  }
+  
+  .project-subsection h3 {
+    font-size: 1.1rem;
+  }
+}
+
+.about-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Example gradient */
+  padding: 20px;
+  color: white; /* Default text color for content inside .about-page */
+}
+
+.waving-gradient-background {
+  min-height: 100vh;
+  color: white; 
+  padding: 20px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Customize these colors! */
+  background-size: 400% 400%;
+  animation: gradientWave 15s ease infinite;
+}
+
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.team-member .member-image img {
+  width: 250px; /* Adjust width as needed */
+  height: 250px; /* Adjust height as needed, should be same as width for a circle */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 50%; /* This makes the image circular */
+  /* margin-bottom: 15px; Optional: if you want space below the image */
+  border: 3px solid #fff; /* Optional: adds a white border around the circle */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow */
+}
