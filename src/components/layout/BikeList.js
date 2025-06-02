@@ -35,7 +35,6 @@ const BikeList = () => {
         setLoading(false);
       });
   }, []);
-
   if (loading) {
     return (
       <div className="loading-container"> {/* New container div */}
