@@ -15,8 +15,9 @@ const MotorcycleCard = ({
   const navigate = useNavigate();
   const base = process.env.REACT_APP_API_URL;
 
-  const cardClick = () => {
-    navigate(`bike/${id}`);
+  const cardClick = (e) => {
+    e.preventDefault();
+    navigate(`/bike/${id}`);
   }
 
   return (
@@ -43,7 +44,7 @@ const MotorcycleCard = ({
         <div className="card-footer">
           <button
             className="details-button"
-            onClick={() => navigate(`/bike/${id}`)}
+            // onClick={() => navigate(`/bike/${id}`)}
           >
             View Details
           </button>
