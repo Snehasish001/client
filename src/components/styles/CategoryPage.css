@@ -13,8 +13,8 @@
 
 .categories-grid-homepage {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -44,6 +44,9 @@
 }
 
 @media (max-width: 768px) {
+    .categories-grid-homepage {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .category-section-homepage {
         padding: 30px 15px;
     }
@@ -58,7 +61,7 @@
     }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .category-section-homepage {
         padding: 20px 10px;
     }
@@ -71,4 +74,4 @@
     .category-image-homepage {
         height: 120px;
     }
-}
+} */
