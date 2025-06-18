@@ -26,6 +26,12 @@ const About = () => {
       role: 'UI/UX Designer',
       description: 'Creates intuitive and visually appealing designs for the best user experience'
     },
+    {
+      image: require('../assets/self photo/bharghav.jpg'),
+      name: 'Bhargav',
+      role: 'UI/UX Designer',
+      description: 'Creates intuitive and visually appealing designs for the best user experience'
+    },
   ];
 
   return (
