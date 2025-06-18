@@ -9,7 +9,7 @@ import royalEnfieldLogo from '../assets/royal-enfield.webp';
 import bajajLogo from '../assets/bajaj.webp';
 import ducatiLogo from '../assets/ducati.webp';
 
-import styles from '../styles/Company.module.css';
+import '../styles/Company.css';
 
 const brands = [
   { id: 'bmw', name: 'BMW', logo: bmwLogo },
@@ -31,19 +31,19 @@ const overview = `
 
 const BrandPage = () => {
   return (
-    <div className={styles.brandPageContainer}>
+    <div className='brandPageContainer'>
       <h1>Explore Top Motorcycle Brands</h1>
-      <p className={styles.overviewText}>{overview}</p>
+      <p className='overviewText'>{overview}</p>
 
-      <div className={styles.brandsGrid}>
+      <div className="brandsGrid">
         {brands.map(({ id, name, logo }) => (
           <Link
             to={`/brand/${id}`}
             key={id}
-            className={styles.brandBox}
+            className="brandBox"
             style={{ textDecoration: 'none' }} // remove underline from Link
           >
-            <img src={logo} alt={`${name} Logo`} className={styles.brandLogo} />
+            <img src={logo} alt={`${name} Logo`} className="brandLogo" />
             {/* <h3 className={styles.brandName}>{name}</h3> */}
           </Link>
         ))}

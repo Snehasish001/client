@@ -23,22 +23,23 @@
 
 .brandsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* desktop default */
   gap: 2.5rem;
   justify-items: center;
+  overflow: visible;
 }
 
 .brandBox {
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
-  padding: 1.5rem 1rem; /* Keep padding for spacing around the logo */
+  padding: 1.5rem 1rem;
   width: 140px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  display: flex; /* Use flex to center the logo vertically if needed */
-  justify-content: center; /* Center logo horizontally */
-  align-items: center; /* Center logo vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .brandBox:hover {
@@ -48,18 +49,21 @@
 
 .brandLogo {
   width: 100%;
-  height: auto; /* Allow height to adjust based on aspect ratio */
-  max-height: 80px; /* Set a max height to prevent logos from being too large */
-  /* Removed margin-bottom as text is removed */
-  /* margin-bottom: 1rem; */
+  height: auto;
+  max-height: 80px;
   object-fit: contain;
 }
 
-/* Removed the brandName rule as the text is removed */
-/*
-.brandName {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #222;
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+  .brandsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-*/
+
+@media (max-width: 600px) {
+  .brandsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
