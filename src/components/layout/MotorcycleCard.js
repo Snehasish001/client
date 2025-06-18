@@ -10,13 +10,17 @@ const MotorcycleCard = ({
   category,
   displacement,
   description,
-  price,
   isTrending = false
 }) => {
   const navigate = useNavigate();
   const base = process.env.REACT_APP_API_URL;
+
+  const cardClick = () => {
+    navigate(`bike/${id}`);
+  }
+
   return (
-    <div className="bike-card">
+    <div className="bike-card" onClick={cardClick}>
       <div className="bike-image-wrapper">
         <img src={`${base}${image}`} alt={name} className="bike-image" />
         {isTrending && <span className="badge">Trending</span>}
