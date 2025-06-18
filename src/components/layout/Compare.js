@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getData } from '../../Api';
 import '../styles/Compare.css';
-import '../styles/loading.css'; // Import the loading an
+import '../styles/loading.css'; 
 
 const Compare = () => {
   const [bikes, setBikes] = useState([]);
