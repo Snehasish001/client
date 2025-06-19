@@ -1,10 +1,13 @@
-.loading-container {
+/* === General Containers === */
+.loading-container,
+.error-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 400px;
   padding: 2rem;
+  text-align: center;
 }
 
 .loading-spinner {
@@ -22,16 +25,6 @@
   100% { transform: rotate(360deg); }
 }
 
-.error-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-  padding: 2rem;
-  text-align: center;
-}
-
 .error-message {
   color: #ef4444;
   font-size: 1.1rem;
@@ -46,7 +39,7 @@
   min-height: 100vh;
 }
 
-/* Back button styles */
+/* === Back Button === */
 .back-button {
   display: inline-flex;
   align-items: center;
@@ -64,6 +57,7 @@
   color: #ef4444;
 }
 
+/* === Details Card Layout === */
 .bike-details-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -83,9 +77,7 @@
   padding: 1.5rem;
 }
 
-/* Add these styles to your existing BikeDetails.css file */
-
-/* Image slider styles */
+/* === Slider Styles === */
 .slider-container {
   position: relative;
   width: 100%;
@@ -117,13 +109,8 @@
   background-color: rgba(239, 68, 68, 0.8);
 }
 
-.slider-arrow.prev {
-  left: 10px;
-}
-
-.slider-arrow.next {
-  right: 10px;
-}
+.slider-arrow.prev { left: 10px; }
+.slider-arrow.next { right: 10px; }
 
 .slider-indicator {
   position: absolute;
@@ -139,8 +126,8 @@
 .main-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 4/3;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -156,6 +143,7 @@
   font-size: 1.1rem;
 }
 
+/* === Thumbnails === */
 .thumbnail-container {
   display: flex;
   gap: 0.5rem;
@@ -168,11 +156,9 @@
 .thumbnail-container::-webkit-scrollbar {
   height: 6px;
 }
-
 .thumbnail-container::-webkit-scrollbar-track {
   background: transparent;
 }
-
 .thumbnail-container::-webkit-scrollbar-thumb {
   background-color: #d1d5db;
   border-radius: 20px;
@@ -189,9 +175,7 @@
   border: 2px solid transparent;
 }
 
-.thumbnail:hover {
-  opacity: 1;
-}
+.thumbnail:hover { opacity: 1; }
 
 .thumbnail.active {
   opacity: 1;
@@ -199,7 +183,7 @@
   box-shadow: 0 0 0 2px #ef4444;
 }
 
-/* Tab navigation styles */
+/* === Tabs === */
 .tab-navigation {
   display: flex;
   border-bottom: 1px solid #e5e7eb;
@@ -233,7 +217,7 @@
   border-bottom-color: #ef4444;
 }
 
-/* Specifications section styles */
+/* === Specifications Section === */
 .specs-section {
   margin-bottom: 3rem;
 }
@@ -241,7 +225,9 @@
 .engine-performance,
 .transmission-chassis,
 .brakes-wheels,
-.dimensions {
+.dimensions,
+.features {
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -256,6 +242,11 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
+.section-title svg {
+  margin-right: 0.75rem;
+  color: #ef4444;
+}
+
 .specs-grid {
   display: inline;
   grid-template-columns: repeat(2, 1fr);
@@ -268,7 +259,6 @@
 
 .spec-row {
   display: flex;
-  /* justify-content: space-between; */
   position: relative;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #f3f4f6;
@@ -292,110 +282,50 @@
   font-size: 0.95rem;
 }
 
-/* Responsive styles */
-@media (max-width: 1024px) {
-  .bike-details-card {
-    grid-template-columns: 1fr;
-  }
-  
-  .image-gallery, .bike-info-section {
-    grid-column: 1;
-  }
-  
-  .specs-grid {
-    grid-template-columns: 1fr;
-  }
+/* === Overview Section === */
+.overview-section {
+  margin: 2rem 0;
 }
 
-@media (max-width: 768px) {
-  .bike-details-container {
-    padding: 1rem;
-  }
-  
-  .bike-meta-info {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  
-  .bike-name {
-    font-size: 1.5rem;
-  }
-  
-  .bike-price {
-    font-size: 1.5rem;
-  }
-  
-  .tab-button {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .slider-arrow {
-    width: 30px;
-    height: 30px;
-    font-size: 1.2rem;
-  }
+.overview-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 480px) {
-  .bike-name {
-    font-size: 1.3rem;
-  }
-  
-  .bike-price {
-    font-size: 1.3rem;
-  }
-  
-  .tab-button {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
-  }
-  
-  .section-title {
-    font-size: 1.1rem;
-  }
-  
-  .spec-row {
-    padding: 0.75rem 1rem;
-  }
-  
-  .spec-key, .spec-value {
-    font-size: 0.85rem;
-  }
+.overview-section p {
+  color: #4b5563;
+  line-height: 1.6;
 }
 
+/* === Contact Dealer Button === */
+.contact-dealer {
+  display: block;
+  width: 100%;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-dealer:hover {
+  background: #dc2626;
+}
+
+/* === Bike Info Section === */
 .bike-info-section {
   grid-column: 2;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-}
-
-.quick-specs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 1.5rem 0;
-  background-color: #f9fafb;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.spec-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.spec-label {
-  color: #6b7280;
-  font-size: 0.9rem;
-}
-
-.spec-value {
-  color: #1f2937;
-  font-weight: 500;
-  font-size: 1rem;
 }
 
 .bike-main-info {
@@ -434,6 +364,7 @@
   margin: 0;
 }
 
+/* === Meta Info Grid === */
 .bike-meta-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -458,159 +389,154 @@
   font-size: 1.1rem;
 }
 
-.overview-section {
-  margin-bottom: 1.5rem;
-}
-
-
-.spec-row:nth-child(odd) {
+/* === Quick Specs === */
+.quick-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
   background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-.spec-key {
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spec-label {
   color: #6b7280;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .spec-value {
   color: #1f2937;
   font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.overview-section {
-  margin: 2rem 0;
-}
-
-.overview-section h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 1rem;
-}
-
-.overview-section p {
-  color: #4b5563;
-  line-height: 1.6;
-}
-
-.contact-dealer {
-  display: block;
-  width: 100%;
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 1rem;
-  border-radius: 6px;
-  font-weight: 500;
   font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  text-align: center;
-  margin-top: 2rem;
 }
 
-.contact-dealer:hover {
-  background: #dc2626;
-}
-
-.tab-navigation {
-  display: flex;
-  border-bottom: 1px solid #e5e7eb;
-  margin-bottom: 2rem;
-}
-
-.tab-button {
-  padding: 1rem 2rem;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  font-weight: 500;
-  color: #6b7280;
-  cursor: pointer;
-}
-
-.tab-button.active {
-  color: #1f2937;
-  border-bottom-color: #ef4444;
-}
-
-.engine-performance, .transmission-chassis, .brakes-wheels, .features {
-  margin-top: 2rem;
-}
-
-.section-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.section-title svg {
-  margin-right: 0.75rem;
-  color: #ef4444;
-}
-
-.loading, .error {
-  text-align: center;
-  padding: 2rem;
-  font-size: 1.1rem;
-  color: #4b5563;
-}
-
-.error {
-  color: #ef4444;
-}
-
+/* === Responsive Media Queries === */
 @media (max-width: 1024px) {
   .bike-details-card {
     grid-template-columns: 1fr;
   }
-  
+
+  .slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slider-arrow {
+    display: none;
+  }
+  .main-image {
+    object-fit: contain;
+  }
+
   .image-gallery, .bike-info-section {
     grid-column: 1;
+    align-items: center;
+    padding-left: 0;
   }
-  
+
   .bike-main-info {
-    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid #f3f4f6;
   }
-  
+
   .bike-price {
     margin-top: 1rem;
   }
-  
+
   .specs-grid {
     grid-template-columns: 1fr;
+  }
+    .thumbnail {
+    width: 24%;
+    gap: 0.5rem;
+  }
+  .thumbnail-container {
+    padding: 0px;
+  }
+  .image-gallery,
+  .bike-info-section {
+    padding: 0px;
   }
 }
 
 @media (max-width: 768px) {
+  .slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .thumbnail {
+    width: 24%;
+    gap: 0.5rem;
+  }
+  .thumbnail-container {
+    padding: 0px;
+  }
+  .main-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .slider-arrow {
+    display: none;
+  }
+
   .bike-details-container {
     padding: 1rem;
   }
-  
+
   .bike-meta-info {
     flex-direction: column;
     gap: 0.5rem;
   }
-  
-  .bike-name {
-    font-size: 1.5rem;
-  }
-  
+
+  .bike-name,
   .bike-price {
     font-size: 1.5rem;
   }
-  
+
   .tab-button {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
   }
+  .image-gallery,
+  .bike-info-section {
+    padding: 0px;
+  }
 }
-  
+
+@media (max-width: 480px) {
+  .bike-name,
+  .bike-price {
+    font-size: 1.3rem;
+  }
+
+  .tab-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .spec-row {
+    padding: 0.75rem 1rem;
+  }
+
+  .spec-key,
+  .spec-value {
+    font-size: 0.85rem;
+  }
+}

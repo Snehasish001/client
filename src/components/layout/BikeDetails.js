@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../components/styles/BikeDetails.css';
 import '../styles/loading.css';  // <-- add loading animation CSS import
@@ -12,6 +12,8 @@ const BikeDetails = () => {
   const [error, setError] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   // const [activeTab, setActiveTab] = useState('overview');
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   useEffect(() => {
     getData(`api/get-bike/${id}`)
@@ -78,11 +80,24 @@ const BikeDetails = () => {
     setCurrentImageIndex(index);
   };
 
+
+  const handleStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  const handleEnd = (e) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    const distance = touchEndX.current - touchStartX.current;
+
+    if (distance > 50) handlePrevImage(); // swipe right
+    if (distance < -50) handleNextImage(); // swipe left
+  }
+
   return (
     <div className="bike-details-container">
       <div className="bike-details-card">
         <div className="image-gallery">
-          <div className="slider-container">
+          <div className="slider-container" onTouchStart={handleStart} onTouchEnd={handleEnd}>
             {images.length > 0 ? (
               <>
                 <button className="slider-arrow prev" onClick={handlePrevImage}>❮</button>
