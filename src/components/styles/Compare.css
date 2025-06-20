@@ -104,13 +104,45 @@ th:first-child, td:first-child {
   .bike-selectors {
     grid-template-columns: 1fr;
   }
-
-  .bike-thumbnail {
-    width: 150px;
-    height: 100px;
+  .bike-selector select {
+    font-size: small;
+    font-weight: 100;
+  }
+  h3 {
+    padding-left: 10px;
   }
 
+  table {
+    table-layout: fixed;
+  }
+
+  .compare-container {
+    padding: 0px;
+  }
+
+  .bike-header h3 {
+    font-size: small;
+  }
+
+  .bike-thumbnail {
+    width: 130px;
+    height: 100px;
+    object-fit: contain;
+  }
+  .spec-label{
+    font-size: x-small;
+  }
+
+  th, td {
+    padding: 10px 5px 10px 5px;
+    text-align: left;
+    font-size: x-small;
+    border-bottom: 1px solid #eee;
+  }
+
+
   th:first-child, td:first-child {
-    width: 120px;
+    width: min-content;
+    font-size: x-small;
   }
 }

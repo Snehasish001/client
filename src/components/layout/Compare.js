@@ -89,7 +89,7 @@ const Compare = () => {
 
   return (
     <div className="compare-container">
-      <h2>Select Bikes to Compare</h2> 
+      <h3>Select Bikes to Compare</h3> 
       <div className="bike-selectors">
         {[0, 1].map(index => (
           <div key={index} className="bike-selector">
@@ -125,7 +125,7 @@ const Compare = () => {
                         onError={(e) => {
                           e.target.src = 'https://via.placeholder.com/200x150?text=No+Image';
                         }}
-                      />
+                      /> 
                       <h3>{bike.name}</h3>
                     </div>
                   </th>
