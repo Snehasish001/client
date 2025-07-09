@@ -23,7 +23,7 @@ const team = [
     name: "Saptarshi Chakraborty",
     role: "CEO",
     img: member2,
-    link: "",
+    link: "https://github.com/saptarshi222",
   },
   {
     name: "Bibhay Lakra",
@@ -35,7 +35,7 @@ const team = [
     name: "Bhargav Sarkar",
     role: "Data Analyst",
     img: member4,
-    link: "https://linkedin.com/",
+    link: "https://www.linkedin.com/in/bhargab-sarkar-47a229374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Arghyadeep Singh",
