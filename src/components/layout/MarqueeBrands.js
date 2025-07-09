@@ -1,4 +1,4 @@
-import '../styles/MarqueeBrands.css';
+import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
 import bmwLogo from '../assets/bmw.webp';
 import heroLogo from '../assets/hero.webp';
@@ -8,7 +8,7 @@ import yamahaLogo from '../assets/yamaha.webp';
 import royalEnfieldLogo from '../assets/royal-enfield.webp';
 import bajajLogo from '../assets/bajaj.webp';
 import ducatiLogo from '../assets/ducati.webp';
-
+import '../styles/MarqueeBrands.css'
 const brands = [
   { id: "yamaha", name: "Yamaha", logo: yamahaLogo },
   { id: "hero", name: "Hero", logo: heroLogo },
@@ -23,33 +23,18 @@ const brands = [
 const MarqueeBrands = () => {
   return (
     <div className="marquee-wrapper">
-      <div className="marquee">
-        <div className="marquee-content">
-          {brands.map((brand, idx) => (
-            <Link to={`/brand/${brand.id}`} key={`brand-${idx}`} className="brand-card">
-              {brand.logo ? (
-                <img src={brand.logo} alt={brand.name} className="brand-logo" />
-              ) : (
-                <div className="brand-placeholder"></div>
-              )}
+      <Marquee pauseOnHover={true} speed={50} gradient={false}>
+        {brands.map((brand, idx) => (
+          brand.logo && (
+            <Link to={`/brand/${brand.id}`} key={idx} className="brand-card">
+              <img src={brand.logo} alt={brand.name} className="brand-logo" />
             </Link>
-          ))}
-        </div>
-        
-        <div className="marquee-content">
-          {brands.map((brand, idx) => (
-            <Link to={`/brand/${brand.id}`} key={`brand-duplicate-${idx}`} className="brand-card">
-              {brand.logo ? (
-                <img src={brand.logo} alt={brand.name} className="brand-logo" />
-              ) : (
-                <div className="brand-placeholder"></div>
-              )}
-            </Link>
-          ))}
-        </div>
-      </div>
+          )
+        ))}
+      </Marquee>
     </div>
   );
 };
 
 export default MarqueeBrands;
+
