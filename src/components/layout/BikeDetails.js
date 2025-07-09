@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../../components/styles/BikeDetails.css';
-import '../styles/loading.css';  // <-- add loading animation CSS import
+import '../styles/loading.css'; 
 import { getData } from '../../Api';
 
 const BikeDetails = () => {
@@ -11,7 +11,6 @@ const BikeDetails = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  // const [activeTab, setActiveTab] = useState('overview');
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -60,7 +59,7 @@ const BikeDetails = () => {
     );
   }
 
-  // Collect images (image1, image2, image3, image4)
+
   const images = [bike.image1, bike.image2, bike.image3, bike.image4].filter(Boolean);
   const base = process.env.REACT_APP_API_URL;
 
@@ -89,8 +88,8 @@ const BikeDetails = () => {
     touchEndX.current = e.changedTouches[0].clientX;
     const distance = touchEndX.current - touchStartX.current;
 
-    if (distance > 50) handlePrevImage(); // swipe right
-    if (distance < -50) handleNextImage(); // swipe left
+    if (distance > 50) handlePrevImage(); 
+    if (distance < -50) handleNextImage(); 
   }
 
   return (
@@ -254,7 +253,6 @@ const BikeDetails = () => {
           </div>
         </div>
       </div>
-
 
     </div>
   );

@@ -12,7 +12,7 @@
   width: 100px;
   gap: 6px;
   height: 100px;
-  margin: 20px auto; /* Added margin to center it better */
+  margin: 20px auto; 
 }
 
 .loading span {

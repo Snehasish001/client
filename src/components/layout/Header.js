@@ -31,7 +31,6 @@ const Header = () => {
           <ul>
             <li><a href="/" onClick={() => setIsMenuOpen(false)}>Home</a></li>
             <li><a href="/Compare" onClick={() => setIsMenuOpen(false)}>Compare</a></li>
-            {/* <li><a href="/launches" onClick={() => setIsMenuOpen(false)}>Launches</a></li> */}
             <li><a href="/brandspage" onClick={() => setIsMenuOpen(false)}>Brands</a></li>
             <li><a href="/about" onClick={() => setIsMenuOpen(false)}>About</a></li>
           </ul>

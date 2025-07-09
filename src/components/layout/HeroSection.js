@@ -11,7 +11,6 @@ const HeroSection = () => {
   const navigate = useNavigate();
   const searchContainerRef = useRef(null);
 
-  // Fetch all bikes for suggestions
   useEffect(() => {
     const fetchBikes = async () => {
       try {
@@ -24,7 +23,6 @@ const HeroSection = () => {
     fetchBikes();
   }, []);
 
-  // Filter suggestions based on search term
   useEffect(() => {
     if (searchTerm.trim() === '') {
       setSuggestions([]);
@@ -34,10 +32,9 @@ const HeroSection = () => {
     const filteredBikes = bikes.filter(bike =>
       bike.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setSuggestions(filteredBikes.slice(0, 5)); // Limit to 5 suggestions
+    setSuggestions(filteredBikes.slice(0, 5));
   }, [searchTerm, bikes]);
 
-  // Handle click outside to close suggestions
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
@@ -54,11 +51,7 @@ const HeroSection = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      // Navigate to a search results page or filter the bike list
-      // For now, we'll just log the search term
       console.log('Searching for:', searchTerm);
-      // You could implement navigation to a search results page like this:
-      // navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
     }
   };
 

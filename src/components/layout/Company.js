@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';  // Import Link here
+import { Link } from 'react-router-dom'; 
 
 import bmwLogo from '../assets/bmw.webp';
 import heroLogo from '../assets/hero.webp';
@@ -41,10 +41,9 @@ const BrandPage = () => {
             to={`/brand/${id}`}
             key={id}
             className="brandBox"
-            style={{ textDecoration: 'none' }} // remove underline from Link
+            style={{ textDecoration: 'none' }} 
           >
             <img src={logo} alt={`${name} Logo`} className="brandLogo" />
-            {/* <h3 className={styles.brandName}>{name}</h3> */}
           </Link>
         ))}
       </div>

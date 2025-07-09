@@ -39,7 +39,6 @@ const Compare = () => {
     setSelectedBikes(newSelectedBikes);
   };
 
-
   const handleClearSelection = (index) => {
     const newSelectedBikes = [...selectedBikes];
     newSelectedBikes[index] = null;
@@ -140,7 +139,6 @@ const Compare = () => {
                 let highlightIndexes = [];
 
                 if (spec.getRank) {
-                  // Custom ranking logic (like for braking_system)
                   const ranks = values.map(v => spec.getRank(v));
                   const maxRank = Math.max(...ranks);
                   highlightIndexes = ranks.map(r => r === maxRank);

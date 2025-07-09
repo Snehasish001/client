@@ -25,11 +25,10 @@
 
 .bikes-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Changed to exactly 4 columns */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 2rem;
 }
 
-/* Removed all bike-card related styles to use MotorcycleCard.css styles */
 
 .brand-not-found {
   text-align: center;
@@ -40,13 +39,13 @@
 
 @media (max-width: 1200px) {
   .bikes-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
 @media (max-width: 992px) {
   .bikes-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
@@ -60,6 +59,6 @@
   }
 
   .bikes-grid {
-    grid-template-columns: 1fr; /* 1 column for mobile */
+    grid-template-columns: 1fr; 
   }
 }

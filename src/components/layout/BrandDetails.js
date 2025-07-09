@@ -67,7 +67,6 @@ const BrandDetails = () => {
 
   const brandDisplayName = brandMapping[brandId];
 
-  // Scroll to top when brandId changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [brandId]);
@@ -75,7 +74,7 @@ const BrandDetails = () => {
   useEffect(() => {
     if (!brandDisplayName) return;
 
-    setLoading(true); // ✅ fix: avoid blank screen on back
+    setLoading(true); 
 
     getData('api/get-bike/')
       .then((data) => {

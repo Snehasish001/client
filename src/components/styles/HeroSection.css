@@ -17,7 +17,6 @@
   line-height: 1.6;
 }
 
-/* Search Container Styles */
 .search-container {
   max-width: 800px;
   margin: 30px auto 0;
@@ -72,7 +71,6 @@
   background-color: #dc2626;
 }
 
-/* Suggestions List Styles */
 .suggestions-list {
   position: absolute;
   top: 100%;

@@ -4,30 +4,27 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Brand */}
         <div>
           <h2>MotoInfo</h2>
           <p>Get the latest bike specs, comparisons, and launch updates all in one place.</p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3>Quick Links</h3>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/compare">Compare</a></li>
-            <li><a href="/brands">Brands</a></li>
+            <li><a href="/brandspage">Brands</a></li>
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
           <h3>Connect With Us</h3>
           <ul>
-            <li><a href="mailto:contact@motoinfo.com">contact@motoinfo.com</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
+            <li><a href="https://g.co/kgs/RXCwcyL">Email</a></li>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://x.com/">Twitter</a></li>
           </ul>
         </div>
       </div>

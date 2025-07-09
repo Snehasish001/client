@@ -32,12 +32,10 @@ const MarqueeBrands = () => {
               ) : (
                 <div className="brand-placeholder"></div>
               )}
-              {/* <p>{brand.name}</p> */}
             </Link>
           ))}
         </div>
         
-        {/* Duplicate the content for seamless looping */}
         <div className="marquee-content">
           {brands.map((brand, idx) => (
             <Link to={`/brand/${brand.id}`} key={`brand-duplicate-${idx}`} className="brand-card">
@@ -46,7 +44,6 @@ const MarqueeBrands = () => {
               ) : (
                 <div className="brand-placeholder"></div>
               )}
-              {/* <p>{brand.name}</p> */}
             </Link>
           ))}
         </div>

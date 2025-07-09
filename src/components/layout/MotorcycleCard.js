@@ -1,4 +1,3 @@
-// src/components/Motorcycles/MotorcycleCard.js
 import '../styles/MotorcycleCard.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -44,7 +43,6 @@ const MotorcycleCard = ({
         <div className="card-footer">
           <button
             className="details-button"
-            // onClick={() => navigate(`/bike/${id}`)}
           >
             View Details
           </button>

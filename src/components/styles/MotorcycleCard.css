@@ -114,7 +114,6 @@
   transform: translateY(0);
 }
 
-/* MOBILE FRIENDLY STYLING */
 @media (max-width: 768px) {
   .bike-card {
     width: 90%;

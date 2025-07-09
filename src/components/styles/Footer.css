@@ -1,7 +1,5 @@
-/* Footer.css */
-
 .footer {
-    background-color: #1f2937; /* Tailwind: bg-gray-900 */
+    background-color: #1f2937;
     color: white;
     margin-top: 3rem;
     padding: 2.5rem 1.5rem;
@@ -30,7 +28,7 @@
   .footer p,
   .footer a {
     font-size: 0.875rem;
-    color: #d1d5db; /* Tailwind: text-gray-400 */
+    color: #d1d5db;
     text-decoration: none;
   }
   
@@ -39,10 +37,10 @@
   }
   
   .footer-bottom {
-    border-top: 1px solid #374151; /* Tailwind: border-gray-800 */
+    border-top: 1px solid #374151; 
     text-align: center;
     padding: 1rem 0;
     font-size: 0.875rem;
-    color: #9ca3af; /* Tailwind: text-gray-500 */
+    color: #9ca3af; 
   }
   

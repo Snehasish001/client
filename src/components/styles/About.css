@@ -4,22 +4,33 @@
   box-sizing: border-box;
 }
 
-.about-container {
-  font-family:  sans-serif;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+body {
+  font-family: sans-serif;
   color: #333;
 }
 
-/* --- About Section --- */
+.about-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
 .about-section {
+  margin-bottom: 4rem;
+}
+
+.about-section h2 {
+  font-size: 42px;
+  color: #0a3d62;
+  margin-bottom: 2rem;
+}
+
+.about-content-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 2rem;
-  margin-bottom: 4rem;
+  flex-wrap: wrap;
 }
 
 .about-text {
@@ -27,15 +38,10 @@
   min-width: 300px;
 }
 
-.about-text h2 {
-  font-size: 42px;
-  margin-bottom: 1rem;
-  color: #0a3d62;
-}
-
 .about-text p {
   font-size: 18px;
   line-height: 1.6;
+  text-align: justify;
 }
 
 .about-image {
@@ -46,15 +52,10 @@
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-/* --- Tech Stack Section --- */
 .tech-section {
   display: flex;
   justify-content: space-between;
@@ -75,7 +76,6 @@
   grid-template-rows: 100px 100px 100px;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 300px;
   height: 300px;
   margin: 0 auto;
@@ -87,25 +87,10 @@
   object-fit: contain;
 }
 
-.logo-top {
-  grid-area: top;
-  justify-self: center;
-}
-
-.logo-left {
-  grid-area: left;
-  justify-self: center;
-}
-
-.logo-right {
-  grid-area: right;
-  justify-self: center;
-}
-
-.logo-bottom {
-  grid-area: bottom;
-  justify-self: center;
-}
+.logo-top { grid-area: top; justify-self: center; }
+.logo-left { grid-area: left; justify-self: center; }
+.logo-right { grid-area: right; justify-self: center; }
+.logo-bottom { grid-area: bottom; justify-self: center; }
 
 .tech-description {
   flex: 1;
@@ -113,24 +98,24 @@
 }
 
 .tech-description h2 {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 1rem;
   color: #0a3d62;
 }
 
 .tech-description p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
+  text-align: justify;
 }
 
-/* --- Team Section --- */
 .team-section {
   text-align: center;
   padding: 0 1rem;
 }
 
 .team-section h2 {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 2rem;
   color: #0a3d62;
 }
@@ -165,7 +150,7 @@
 }
 
 .team-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   margin-bottom: 0.5rem;
 }
@@ -180,35 +165,39 @@
   text-decoration: underline;
 }
 
-
 @media (max-width: 768px) {
+  .about-section h2 {
+    font-size: 32px;
+    text-align: center;
+  }
 
-  .about-section,
+  .about-content-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    order: 3;
+    max-width: 90%;
+  }
+
+  .about-image {
+    order: 2;
+    width: 90%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+
   .tech-section {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
-  .about-image {
-    width: 90%;
-    max-width: 300px;
-    margin-top: 1rem;
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .about-text,
-  .tech-description {
-    max-width: 90%;
-  }
-
-  .tech-logos-diamond {
-    margin-bottom: 2rem;
-  }
-
   .logo {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
   }
 
   .team-cards {
@@ -216,7 +205,12 @@
     align-items: center;
   }
 
-  .team-card img{
+  .team-card {
+    width: 100%;
+  }
+
+  .team-card img {
+    height: 250px;
     width: 90%;
     max-width: 300px;
     object-fit: cover;
