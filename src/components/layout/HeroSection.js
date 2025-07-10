@@ -87,31 +87,35 @@ const HeroSection = () => {
             <button type="submit" className="search-button">Search</button>
           </form>
           
-          {showSuggestions && suggestions.length > 0 && (
+          {showSuggestions && (
             <ul className="suggestions-list">
-              {suggestions.map((bike) => (
-                <li 
-                  key={bike.id} 
-                  onClick={() => handleSuggestionClick(bike.id)}
-                  className="suggestion-item"
-                >
-                  <div className="suggestion-content">
-                    <img 
-                      src={`${process.env.REACT_APP_API_URL}${bike.image1}`} 
-                      alt={bike.name} 
-                      className="suggestion-image" 
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = 'https://via.placeholder.com/40x40?text=No+Image';
-                      }}
-                    />
-                    <div className="suggestion-details">
-                      <span className="suggestion-name">{bike.name}</span>
-                      <span className="suggestion-price">₹{parseInt(bike.price).toLocaleString()}</span>
+              {suggestions.length > 0 ? (
+                suggestions.map((bike) => (
+                  <li 
+                    key={bike.id} 
+                    onClick={() => handleSuggestionClick(bike.id)}
+                    className="suggestion-item"
+                  >
+                    <div className="suggestion-content">
+                      <img 
+                        src={`${process.env.REACT_APP_API_URL}${bike.image1}`} 
+                        alt={bike.name} 
+                        className="suggestion-image" 
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://via.placeholder.com/40x40?text=No+Image';
+                        }}
+                      />
+                      <div className="suggestion-details">
+                        <span className="suggestion-name">{bike.name}</span>
+                        <span className="suggestion-price">₹{parseInt(bike.price).toLocaleString()}</span>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              ))}
+                  </li>
+                ))
+              ) : (
+                <li className="suggestion-item no-result">No result found</li>
+              )}
             </ul>
           )}
         </div>

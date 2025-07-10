@@ -131,6 +131,13 @@
   font-weight: 600;
 }
 
+.no-result {
+  padding: 10px;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 36px;
