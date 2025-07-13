@@ -21,7 +21,7 @@ const team = [
   },
   {
     name: "Saptarshi Chakraborty",
-    role: "CEO",
+    role: "Project Coordinator",
     img: member2,
     link: "https://github.com/saptarshi222",
   },
@@ -32,7 +32,7 @@ const team = [
     link: "https://www.linkedin.com/in/bibhay-lakra-b29004252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
-    name: "Bhargav Sarkar",
+    name: "Bhargab Sarkar",
     role: "Data Analyst",
     img: member4,
     link: "https://www.linkedin.com/in/bhargab-sarkar-47a229374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
